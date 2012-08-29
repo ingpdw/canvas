@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<style>
+	body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,form,fieldset,p,button{margin:0;padding:0}
+	body,h1,h2,h3,h4,th,td,input{color:#333;font-family:"돋움",dotum,sans-serif;font-size:12px;font-weight:normal}
+	hr{display:none}
+	img,fieldset{border:0}
+	ul,ol,li{list-style:none}
+	img,input,select,textarea{vertical-align:middle}
+	#cvs{margin: 20px;}
+	.priceLayer{width: 60px;background-color: #fff;border: 1px solid #333;}
+	.price {font-family:verdana}
+	.price span {display:inline-block;margin-right:4px;padding-right:14px;background:url('http://static.plaync.co.kr/ingame/bns/market/pirce.gif') no-repeat;letter-spacing:-1px;width:18px;color:#333}
+	.price span span {display:none}
+	.price .gold {background-position:right 2px;}
+	.price .silver {background-position:right -14px}
+	.price .bronze {background-position:right -30px}
+	h1{font-size:13px;color: #255361;font-weight: bold;}	
+	canvas{display: inline;}
+	.options{display: block;}
+	dfn {display: none;}
+	.navi{position:relative;width:60px;height:50px;cursor: pointer;}
+	.navi .prev{background: url("http://static.plaync.co.kr/aion_v3/community/theme/calendar_week.gif") no-repeat scroll 0 0 transparent;height: 21px;left:0;position:absolute;top:5px;width:11px;}
+	.navi .next{background: url("http://static.plaync.co.kr/aion_v3/community/theme/calendar_week.gif") no-repeat scroll 0 -31px transparent;height:21px;position: absolute;right:0;top:5px;width: 11px;}	
+	
+</style>
+</head>
+<body>
+	<h1>가격대별 거래량</h1>
+	<div id="cvs"></div>
+
+	<div class="navi">
+		<span class="prev" id="prevBtn"><dfn>prev</dfn></span>
+		<span class="next" id="nextBtn"><dfn>next</dfn></span>
+	</div>	
+	
+	<script src="Base.js"></script>
+	<script src="Animate.js"></script>
+	<script src="Event.js"></script>
+	<script src="Canvas.js"></script>
+	<script src="Shape.js"></script>
+	<script src="Rect.js"></script>
+	<script src="Line.js"></script>
+	<script src="Text.js"></script>
+	<script src="Circle.js"></script>
+	<script src="Layer.js"></script>
+	<script>
+
+	(function(){
+		NcCanvas('cvs')
+		    .setSize(500, 200)
+			.color('#18495a')
+			.rect(30, 30, 50, 50)
+			.color('#31798c')
+			.rect(80, 30, 100, 50)
+			.color('#398ea5')
+			.rect(180, 30, 40, 50)
+			.color('#429eb5')
+			.rect(220, 30, 50, 50)
+			.color('#63b6ce')
+			.rect(270, 30, 80, 50)
+			.color('#94c7d6')
+			.rect(350, 30, 80, 50)
+			.color('#18495a')
+			.text2('12.5%', 30, 84, {fontSize: 12})
+			.text2('25%', 80, 84, {fontSize: 12})
+			.text2('10%', 180, 84, {fontSize: 12})
+			.text2('12.5%', 220, 84, {fontSize: 12})	
+			.text2('20%', 270, 84, {fontSize: 12})	
+			.text2('20%', 350, 84, {fontSize: 12});	
+	})(window);				
+
+	nc.Event.addListener(document.getElementById('prevBtn'), 'click', function(){
+		location.href = 'rect.html';
+	});
+	nc.Event.addListener(document.getElementById('nextBtn'), 'click', function(){
+		location.href = 'circle.html';
+	});	
+
+		
+
+	</script>
+</body>
+</html>

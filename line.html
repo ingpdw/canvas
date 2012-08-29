@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<style>
+	body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,form,fieldset,p,button{margin:0;padding:0}
+	body,h1,h2,h3,h4,th,td,input{color:#333;font-family:"돋움",dotum,sans-serif;font-size:12px;font-weight:normal}
+	hr{display:none}
+	img,fieldset{border:0}
+	ul,ol,li{list-style:none}
+	img,input,select,textarea{vertical-align:middle}
+	#cvs{margin: 20px;}
+	.priceLayer{width: 60px;background-color: #fff;border: 1px solid #999;}
+	.price {font-family:verdana}
+	.price span {display:inline-block;margin-right:4px;padding-right:14px;background:url('http://static.plaync.co.kr/ingame/bns/market/pirce.gif') no-repeat;letter-spacing:-1px;width:18px;color:#333}
+	.price span span {display:none}
+	.price .gold {background-position:right 2px;}
+	.price .silver {background-position:right -14px}
+	.price .bronze {background-position:right -30px}
+</style>
+</head>
+<body>
+	<div id="cvs"></div>
+	<script src="jquery-1.6.1.js"></script>
+	<script src="Base.js"></script>
+	<script src="Base.js"></script>
+	<script src="Animate.js"></script>
+	<script src="Event.js"></script>
+	<script src="Canvas.js"></script>
+	<script src="Shape.js"></script>
+	<script src="Rect.js"></script>
+	<script src="Line.js"></script>
+	<script src="Text.js"></script>
+	<script src="Circle.js"></script>
+	<script src="Layer.js"></script>
+	<script>
+		var a = new NcCanvas('cvs'), l;
+		a.setSize(500, 400).lineWeight(2).lineColor('#666').
+		setDrawImage('images/line.jpg', 0, 0, 400, 300, function(){
+			a.moveTo(25, 280)
+			.lineTo(90, 200)
+			.lineTo(150, 280)
+			.lineTo(200, 260)
+			.lineTo(260, 80)
+			.lineTo(320, 40)
+			.lineTo(380, 260)
+			.color('#333')
+			.text('MON', 15, 305, 'dotum', 12, 'bold')
+			.text('TUE', 75, 305, 'dotum', 12, 'bold')
+			.text('WED', 135, 305, 'dotum', 12, 'bold')
+			.text('THU', 185, 305, 'dotum', 12, 'bold')
+			.text('FRI', 245, 305, 'dotum', 12, 'bold')
+			.text('SAT', 305, 305, 'dotum', 12, 'bold')
+			.text('SUN', 365, 305, 'dotum', 12, 'bold')
+
+			.color('#ffffff').lineColor('#333').lineWeight(1)
+			.circle(25, 280, 5, 0, 360, {mouseover: function(){
+				l.showMsg('<span class="gold">1</span><span class="silver">0</span><span class="bronze">0</span>', 30, 240);}})
+			.circle(90, 200, 5, 0, 360, {mouseover: function(){
+				l.showMsg('<span class="gold">1</span><span class="silver">10</span><span class="bronze">0</span>', 95, 160);}})
+			.circle(150, 280, 5, 0, 360, {mouseover: function(){
+				l.showMsg('<span class="gold">1</span><span class="silver">0</span><span class="bronze">0</span>', 155, 260);}})
+			.circle(200, 260, 5, 0, 360, {mouseover: function(){
+				l.showMsg('<span class="gold">1</span><span class="silver">3</span><span class="bronze">0</span>', 205, 220);}})
+			.circle(260, 80, 5, 0, 360, {mouseover: function(){
+				l.showMsg('<span class="gold">3</span><span class="silver">2</span><span class="bronze">0</span>', 265, 90);}})
+			.circle(320, 40, 5, 0, 360, {mouseover: function(){
+				l.showMsg('<span class="gold">3</span><span class="silver">8</span><span class="bronze">0</span>', 325, 40);}})
+			.circle(380, 260, 5, 0, 360, {mouseover: function(){
+				l.showMsg('<span class="gold">1</span><span class="silver">0</span><span class="bronze">0</span>', 385, 250);}})
+				
+				l = new nc.Layer();
+		})
+					
+		
+
+	</script>
+</body>
+</html>
