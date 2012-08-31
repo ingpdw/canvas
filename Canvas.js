@@ -202,6 +202,10 @@ nc.Canvas.prototype = {
 		this._drawCircle({cx: x, cy: y, r: r, s: s, e: e, handler: handler});
 		return this;
 	},
+	strokeRect: function(x, y, w, h, handler){
+		this._drawRect({x: x, y: y, w: w, h: h, type: 'stroke', handler: handler});
+		return this;
+	},
 	rect: function(x, y, w, h, handler){
 		this._drawRect({x: x, y: y, w: w, h: h, handler: handler});
 		return this;
