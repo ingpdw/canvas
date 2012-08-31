@@ -3,24 +3,15 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <style>
-
+	#wrapGraph{width: 624px;}
 </style>
 </head>
 <body>
-
-	<div id="line"></div>
-	<div id="rect"></div>
-		
-	<script src="Base.js"></script>
-	<script src="Animate.js"></script>
-	<script src="Event.js"></script>
-	<script src="Canvas.js"></script>
-	<script src="Shape.js"></script>
-	<script src="Rect.js"></script>
-	<script src="Line.js"></script>
-	<script src="Text.js"></script>
-	<script src="Circle.js"></script>
-	<script src="Layer.js"></script>
+	<div id="wrapGraph">
+		<div id="line"></div>
+		<div id="rect"></div>
+	</div>		
+	<script src="build/nc.canvas.js"></script>
 	<script>
 	var data = [200, 1000, 4000, 2000, 3000, 5540, 3000, 1, 3424, 6500, 5540, 22.2, 22.2, 1000, 4362, 3000, 4000, 4000, 3000, 7654, 5345, 6500, 3754, 2643, 8756, 6500, 24.5, 23.4, 23.4, 10.0,
 	 			2043, 1234, 2423, 2142, 3455, 8324, 3234, 3234, 2344, 2453, 3000, 2223, 1332, 233, 3222, 1211, 3000, 4443, 10000, 4444, 2232, 233, 444, 9999, 7878, 234, 1452, 1332, 3245, 2343,
@@ -30,18 +21,19 @@
 		max = 10000;	
 	
 				 
-	var lineH = 235, 
-//		lineW = 624,
-		lineW = 10000,  
-		rectH = 87;
-	
+	var canvasWrap = document.getElementById('wrapGraph'),
+		lineW = nc.integer(nc.getStyle(canvasWrap, 'width')),  
+		lineH = 235, 
+		rectH = 87,
+		graphW = parseInt(lineW / data.length);
+
 	var lineG = NcCanvas('line')
 		lineG.setSize(lineW, lineH).lineColor('#6090d2');
 		lineG.moveTo(0, lineH * (max - data[i]) / max);
 	
 	for(var i = 1, len = data.length; len > i; i++){
 		var y = lineH * (max - data[i]) / max;
-		lineG.lineTo((7 * i) + (1 * i), y);
+		lineG.lineTo((graphW * i) + (1 * i), y);
 	}		
 	
 	var rectG = NcCanvas('rect')
@@ -56,12 +48,8 @@
 			y = rectH - 1;
 		}
 
-		rectG.rect((7 * i) + (1 * i), y, 7, h);
+		rectG.rect((graphW * i) + (1 * i), y, graphW, h);
 	}
-	
-	
-		
-
 	</script>
 </body>
 </html>
