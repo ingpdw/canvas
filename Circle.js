@@ -22,10 +22,10 @@ nc.Circle = function(opts){
 		mouseout: null
 	};nc.extend(this.opts, opts);
 	
-	this.opts.w = this.opts.h = this.opts.r * 2;
-	this.opts.x = this.opts.cx - this.opts.r;
-	this.opts.y = this.opts.cy - this.opts.r;
-	this.opts.cx = this.opts.cy = this.opts.r;
+	this.opts.w = this.opts.h = this.opts.r * 2 + this.opts.lineWidth * 2;
+	this.opts.x = this.opts.cx - this.opts.r - this.opts.lineWidth;
+	this.opts.y = this.opts.cy - this.opts.r - this.opts.lineWidth;;
+	this.opts.cx = this.opts.cy = this.opts.r + this.opts.lineWidth;;
 	
 	this._init();
 	
