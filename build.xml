@@ -1,0 +1,22 @@
+<project name="ncCanvas" default="compress_javascripts" basedir=".">
+<target name="merge_javascripts">
+  <concat destfile="./build/nc.canvas.merge.js" force="no">
+		<fileset file="Base.js"/>
+		<fileset file="Animate.js"/>
+		<fileset file="Event.js"/>
+		<fileset file="Canvas.js"/>
+		<fileset file="Shape.js"/>
+		<fileset file="Rect.js"/>
+		<fileset file="Line.js"/>
+		<fileset file="Text.js"/>
+		<fileset file="Circle.js"/>
+		<fileset file="Layer.js"/>
+  </concat>  
+</target>
+
+<target name="compress_javascripts" depends="merge_javascripts">
+	<java jar="./lib/compiler.jar" fork="true" failonerror="yes">
+		<arg line="--js ./build/nc.canvas.merge.js --js_output_file ./build/nc.canvas.js"/>
+	</java>
+</target>
+</project>
