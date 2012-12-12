@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<script src="js/base.js"></script>
+<script src="js/ICommand.js"></script>
+<script src="js/AbstractCommand.js"></script>
+<script src="js/Redo.js"></script>
+<script src="js/Undo.js"></script>
+<script src="js/Effectcommand.js"></script>
+<script src="js/effect.js"></script>
+<script src="js/Service.js"></script>
+<style>
+	menu{ position:absolute; }
+	menu li{list-style:none;}
+</style>
+</head>
+<body>
+
+<menu>
+	<li id="effect1">A</li>
+	<li id="effect2">B</li>
+	<li id="effect3">C</li>
+	<li id="effect4">D</li>
+	<li id="effect5">E</li>
+	<li id="effect6">F</li>
+	<li id="undo">undo</li>
+	<li id="redo">redo</li>
+</menu>
+
+<script type="text/javascript" >  
+
+var p$ = function(id){
+	return document.getElementById(id);
+};
+
+var addClickEvent = function(id, handler){
+	id.addEventListener('click', handler, false);
+};
+
+window.onload = function(e){
+	var smartEffect = new p.Service();
+		smartEffect.setImage('img/970.jpg', function(msg){
+			addClickEvent(p$('effect1'), function(){
+				smartEffect.setEffect( p.effect.effect1 );
+			});
+			addClickEvent(p$('effect2'), function(){
+				smartEffect.setEffect( p.effect.effect2 );
+			});
+			addClickEvent(p$('effect3'), function(){
+				smartEffect.setEffect( p.effect.effect3 );
+			});
+			addClickEvent(p$('effect4'), function(){
+				smartEffect.setEffect( p.effect.effect4 );
+			});
+			addClickEvent(p$('effect5'), function(){
+				smartEffect.setEffect( p.effect.effect5 );
+			});		
+			addClickEvent(p$('effect6'), function(){
+				smartEffect.setEffect( p.effect.effect6 );
+			});					
+			addClickEvent(p$('undo'), function(){
+				var command = new p.command.Undo();
+			});								
+			addClickEvent(p$('redo'), function(){
+				var command = new p.command.Redo();
+			});																	
+		});	
+}
+</script>
+</body>
+</html>  

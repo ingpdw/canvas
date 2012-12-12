@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/pdw/!svn/ver/3547/WebContent/playinG/imageEditor/simpleFilter/js
+END
+Service.js
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/pdw/!svn/ver/3547/WebContent/playinG/imageEditor/simpleFilter/js/Service.js
+END
+Undo.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/pdw/!svn/ver/3547/WebContent/playinG/imageEditor/simpleFilter/js/Undo.js
+END
+ICommand.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/pdw/!svn/ver/3547/WebContent/playinG/imageEditor/simpleFilter/js/ICommand.js
+END
+base.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/pdw/!svn/ver/3547/WebContent/playinG/imageEditor/simpleFilter/js/base.js
+END
+effect.js
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/pdw/!svn/ver/3554/WebContent/playinG/imageEditor/simpleFilter/js/effect.js
+END
+Redo.js
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/pdw/!svn/ver/3547/WebContent/playinG/imageEditor/simpleFilter/js/Redo.js
+END
+EffectCommand.js
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/pdw/!svn/ver/3547/WebContent/playinG/imageEditor/simpleFilter/js/EffectCommand.js
+END
+AbstractCommand.js
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/pdw/!svn/ver/3547/WebContent/playinG/imageEditor/simpleFilter/js/AbstractCommand.js
+END
